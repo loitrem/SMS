@@ -23,29 +23,37 @@ import javax.persistence.Table;
 @Table( name="courses")
 @IdClass( StudentCoursesID.class)
 @NamedQueries({
+	// created named queries
 	@NamedQuery( name="CoursesByStudent", query="Select c from StudentCourses c where c.eMail = :email"),
 	@NamedQuery( name="Find all studentcourses", query="Select c from StudentCourses c"),
 	@NamedQuery( name="insert into studentcourses", query="INSERT INTO ( email , course_id ) sc StudentCourses sc VALUES ( :email , :id )")
 })
 public class StudentCourses {
+	//@Id makes email and course id primary key together
 	@Id
+	//rename in database
 	@Column(name="student_email")
 	private String eMail;
-	
+
+	//no args constructor
 	public StudentCourses() {}
 	
 	/**
 	 * @param eMail
 	 * @param courseID
 	 */
+	// all args constructor
 	public StudentCourses(String eMail, int courseID) {
 		this.eMail = eMail;
 		this.courseID = courseID;
 	}
 
 	@Id
+	//rename in databse
 	@Column(name="course_id")
 	private int courseID;
+
+	// getters and setters for all variables
 
 	/**
 	 * @return the eMail
@@ -78,6 +86,7 @@ public class StudentCourses {
 	/* (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 */
+	// both these methods are to avoid the exception created with .equals
 	@Override
 	public int hashCode() {
 		final int prime = 31;
