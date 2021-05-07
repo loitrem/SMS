@@ -20,13 +20,13 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table( name="courses")
+@Table( name="StudentCourses")
 @IdClass( StudentCoursesID.class)
 @NamedQueries({
 	// created named queries
 	@NamedQuery( name="CoursesByStudent", query="Select c from StudentCourses c where c.eMail = :email"),
-	@NamedQuery( name="Find all studentcourses", query="Select c from StudentCourses c"),
-	@NamedQuery( name="insert into studentcourses", query="INSERT INTO ( email , course_id ) sc StudentCourses sc VALUES ( :email , :id )")
+	@NamedQuery( name="Find all studentcourses", query="Select c from StudentCourses c")
+
 })
 public class StudentCourses {
 	//@Id makes email and course id primary key together

@@ -101,26 +101,20 @@ public class StudentService implements StudentDAO {
             // creates a string to check against the result list
             String checkResults = "StudentCourses{" +
                     "email=" + email +
-                    ", course_id='" + cId + "\'" +
+                    ", course_id='" + cId + "'" +
                     "}";
             // sets a boolean to tell us if there was a match between supplied email and cId and what is in the database
-            boolean insert;
-            // for loop to cycle through the list of results
-            for (int i = 0; i < sc.size(); i++) {
-                // compares each result to our checkResults string if it matches set insert false otherwise set insert true
-                if (sc.get(i).toString().equals(checkResults)) {
-                    insert = false;
-                } else {
-                    insert = true;
-                }
 
-                // if insert is true input the email and id into the StudentCourses table
-                if (insert == true) {
-                    // sets q to the named query find all students
-                    Query q1 = em.createNamedQuery("insert into studentcourses");
+            // for loop to cycle through the list of results
+            for (StudentCourses studentCourses : sc) {
+                // if true input the email and id into the StudentCourses table
+                if (!studentCourses.toString().equals(checkResults)) {
+                    //creates new student courses
+                    StudentCourses sCourses = new StudentCourses();
                     // sets variables for search
-                    q1.setParameter("email", email);
-                    q1.setParameter("course_id", cId);
+                    sCourses.seteMail(email);
+                    sCourses.setCourseID(cId);
+                    em.persist(sCourses);
                 }
             }
 

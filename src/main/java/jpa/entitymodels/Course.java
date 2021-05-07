@@ -16,18 +16,18 @@ import javax.persistence.*;
 @NamedQueries({
         // created named queries
         @NamedQuery(name = "Find course by id", query = "SELECT c FROM Course c WHERE c.id = :id"),
-        @NamedQuery( name="Find all courses", query="Select c from Courses c")
+        @NamedQuery( name="Find all courses", query="Select c from Course c")
 })
 public class Course {
     // variables / fields
     //make id primary key
     @Id
     // make id auto generate and assign it as int and not null
-    @GeneratedValue(strategy = GenerationType.IDENTITY) @Column(columnDefinition = "INT(11) UNSIGNED", name = "id")@NonNull
+    @GeneratedValue(strategy = GenerationType.IDENTITY) @Column(columnDefinition = "INT(11) UNSIGNED", name = "id", nullable = false)
     Integer cId;
     //assign as varchar in database, name it, and not null
-    @Column(columnDefinition = "VARCHAR(50)", name = "name")@NonNull
+    @Column(columnDefinition = "VARCHAR(50)", name = "name", nullable = false)
     String cName;
-    @Column(columnDefinition = "VARCHAR(50)", name = "instructor")@NonNull
+    @Column(columnDefinition = "VARCHAR(50)", name = "instructor", nullable = false)
     String cInstructorName;
 }

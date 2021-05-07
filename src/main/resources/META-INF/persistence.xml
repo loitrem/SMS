@@ -3,20 +3,25 @@
              xmlns="http://xmlns.jcp.org/xml/ns/persistence"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
-                                 http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
-    <persistence-unit name="SMS">
+     http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+    <persistence-unit name="SMS" transaction-type="RESOURCE_LOCAL">
         <!-- Persistence provider -->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <!-- Entity classes -->
         <class>jpa.entitymodels.Student</class>
         <class>jpa.entitymodels.Course</class>
-
+        <class>jpa.entitymodels.StudentCourses</class>
+        <class>jpa.entitymodels.StudentCoursesID</class>
         <properties>
-            <!-- Configuring The Database Connection Details -->
+            <property name="hibernate.cache.use_second_level_cache" value="false"/>
+            <property name="hibernate.cache.use_query_cache" value="false"/>
             <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:mariadb://localhost:3306/sms" />
+            <property name="javax.persistence.jdbc.url"    value="jdbc:mariadb://localhost:3306/sms" />
             <property name="javax.persistence.jdbc.user" value="root" />
             <property name="javax.persistence.jdbc.password" value="root" />
+            <property name="javax.persistence.lock.timeout" value="100"/>
+            <property name="javax.persistence.query.timeout" value="100"/>
+            <!-- <property name="javax.persistence.schema-generation.database.action" value="update" /> -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDB103Dialect"/>
             <property name="hibernate.hbm2ddl.auto" value="create" />
             <property name="hibernate.show_sql" value="false"/>
@@ -24,10 +29,9 @@
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.use_sql_comments" value="true"/>
             <property name="hibernate.generate_statistics" value="true" />
-            <!--            <property name="eclipselink.logging.level" value="OFF"/>-->
-            <!--            <property name="eclipselink.ddl-generation" value="create-tables"/>-->
+            <property name="current_session_context_class" value="thread"/>
+
         </properties>
 
     </persistence-unit>
-
 </persistence>
