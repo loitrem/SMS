@@ -12,6 +12,7 @@ import java.util.Scanner;
 
 import jpa.entitymodels.Course;
 import jpa.entitymodels.Student;
+import jpa.entitymodels.StudentCourses;
 import jpa.service.CourseService;
 import jpa.service.StudentCourseService;
 import jpa.service.StudentService;
@@ -83,9 +84,9 @@ public class SMSRunner {
 		out.print("Enter your password: ");
 		String password = sin.next();
 
-		List<Student> students = studentService.getStudentByEmail(email);
+		Student students = studentService.getStudentByEmail(email);
 		if (students != null) {
-			currentStudent = students.get(0);
+			currentStudent = students;
 		}
 
 		if (currentStudent != null & currentStudent.getSPass().equals(password)) {
@@ -111,25 +112,25 @@ public class SMSRunner {
 			List<Course> allCourses = courseService.getAllCourses();
 			List<Course> studentCourses = studentService.getStudentCourses(currentStudent.getSEmail());
 			allCourses.removeAll(studentCourses);
-			out.printf("%5s%15S%15s\n", "ID", "Course", "Instructor");
+			out.printf("%5s %15s %15s\n", "ID", "Course", "Instructor");
 			for (Course course : allCourses) {
 				out.println(course);
 			}
 			out.println();
 			out.print("Enter Course Number: ");
 			int number = sin.nextInt();
-			Course newCourse = courseService.GetCourseById(number).get(0);
+			Course newCourse = courseService.getCourseById(number);
 
 			if (newCourse != null) {
-				studentService.registerStudentToCourse(currentStudent.getSEmail(), newCourse);
-				Student temp = studentService.getStudentByEmail(currentStudent.getSEmail()).get(0);
+				studentService.registerStudentToCourse(currentStudent.getSEmail(), newCourse.getCId());
+				Student temp = studentService.getStudentByEmail(currentStudent.getSEmail());
 				
 				StudentCourseService scService = new StudentCourseService();
-				List<Course> sCourses = scService.getAllStudentCourses(temp.getSEmail());
+				List<StudentCourses> sCourses = scService.getAllStudentCourses(temp.getSEmail());
 				
 
 				out.println("MyClasses");
-				for (Course course : sCourses) {
+				for (StudentCourses course : sCourses) {
 					out.println(course);
 				}
 			}

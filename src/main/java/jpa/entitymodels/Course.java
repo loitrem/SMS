@@ -13,6 +13,10 @@ import javax.persistence.*;
 @Log4j
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "Find course by id", query = "SELECT c FROM Course c WHERE c.id = :id"),
+        @NamedQuery( name="Find all courses", query="Select c from Courses c")
+})
 public class Course {
 
     @Id
