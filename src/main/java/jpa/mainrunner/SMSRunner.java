@@ -15,6 +15,9 @@ import jpa.entitymodels.Student;
 import jpa.service.CourseService;
 import jpa.service.StudentCourseService;
 import jpa.service.StudentService;
+import jpa.util.SMSUtil;
+
+import javax.persistence.EntityManagerFactory;
 
 /**1
  * 
@@ -22,6 +25,8 @@ import jpa.service.StudentService;
  *
  */
 public class SMSRunner {
+
+	public static EntityManagerFactory emf = SMSUtil.getEntityManagerFactory();
 
 	private Scanner sin;
 	private StringBuilder sb;
@@ -83,7 +88,7 @@ public class SMSRunner {
 			currentStudent = students.get(0);
 		}
 
-		if (currentStudent != null & currentStudent.getStudentPassword().equals(password)) {
+		if (currentStudent != null & currentStudent.getSPass().equals(password)) {
 			List<Course> courses = studentService.getStudentCourses(email);
 			out.println("MyClasses");
 			for (Course course : courses) {
@@ -104,7 +109,7 @@ public class SMSRunner {
 		switch (sin.nextInt()) {
 		case 1:
 			List<Course> allCourses = courseService.getAllCourses();
-			List<Course> studentCourses = studentService.getStudentCourses(currentStudent.getStudentEmail());
+			List<Course> studentCourses = studentService.getStudentCourses(currentStudent.getSEmail());
 			allCourses.removeAll(studentCourses);
 			out.printf("%5s%15S%15s\n", "ID", "Course", "Instructor");
 			for (Course course : allCourses) {
@@ -116,11 +121,11 @@ public class SMSRunner {
 			Course newCourse = courseService.GetCourseById(number).get(0);
 
 			if (newCourse != null) {
-				studentService.registerStudentToCourse(currentStudent.getStudentEmail(), newCourse);
-				Student temp = studentService.getStudentByEmail(currentStudent.getStudentEmail()).get(0);
+				studentService.registerStudentToCourse(currentStudent.getSEmail(), newCourse);
+				Student temp = studentService.getStudentByEmail(currentStudent.getSEmail()).get(0);
 				
 				StudentCourseService scService = new StudentCourseService();
-				List<Course> sCourses = scService.getAllStudentCourses(temp.getStudentEmail());
+				List<Course> sCourses = scService.getAllStudentCourses(temp.getSEmail());
 				
 
 				out.println("MyClasses");

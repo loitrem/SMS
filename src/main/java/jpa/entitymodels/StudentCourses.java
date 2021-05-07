@@ -5,6 +5,8 @@
  */
 package jpa.entitymodels;
 
+import lombok.*;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -21,7 +23,9 @@ import javax.persistence.Table;
 @Table( name="courses")
 @IdClass( StudentCoursesID.class)
 @NamedQueries({
-	@NamedQuery( name="CoursesByStudent", query="Select c from StudentCourses c where c.eMail = :email")
+	@NamedQuery( name="CoursesByStudent", query="Select c from StudentCourses c where c.eMail = :email"),
+	@NamedQuery( name="Find all studentcourses", query="Select c from StudentCourses c"),
+	@NamedQuery( name="insert into studentcourses", query="INSERT INTO ( email , course_id ) sc StudentCourses sc VALUES ( :email , :id )")
 })
 public class StudentCourses {
 	@Id
