@@ -7,6 +7,7 @@ package jpa.mainrunner;
 
 import static java.lang.System.out;
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -54,28 +55,49 @@ public class SMSRunner {
 	}
 
 	private void run() {
-		// Login or quit
-		switch (menu1()) {
-		case 1:
-			if (studentLogin()) {
-				registerMenu();
+		int run = 99;
+
+		while (run!=0) {
+			// Login or quit
+			switch (menu1()) {
+				case 1:
+					if (studentLogin()) {
+						registerMenu();
+					}
+					break;
+				case 2:
+					//AddStudent();
+					break;
+				case 3:
+
+					break;
+				case 0:
+					System.out.println("Goodbye!");
+					run = 0;
+					break;
+
+				default:
+					menu1();
+					break;
+
 			}
-			break;
-		case 2:
-			out.println("Goodbye!");
-			break;
-
-		default:
-
 		}
 	}
 
-	private int menu1() {
-		sb.append("\n1.Student Login\n2. Quit Application\nPlease Enter Selection: ");
-		out.print(sb.toString());
-		sb.delete(0, sb.length());
 
-		return sin.nextInt();
+	private int menu1() {
+		sb.append("\n1. Student Login\n2. Register New Student\n0. Quit Application\nPlease Enter Selection: ");
+		System.out.print(sb.toString());
+		sb.delete(0, sb.length());
+		try {
+			return sin.nextInt();
+		} catch (InputMismatchException e) {
+			System.out.println("Input error. Please choose a number from the menu to continue.");
+			sin.nextLine();
+			run();
+
+		}
+		return 0;
 	}
 
 	private boolean studentLogin() {
@@ -118,8 +140,7 @@ public class SMSRunner {
 		switch (sin.nextInt()) {
 		case 1:
 			List<Course> allCourses = courseService.getAllCourses();
-			//List<Course> studentCourses = studentService.getStudentCourses(currentStudent.getSEmail());
-			//allCourses.removeAll(studentCourses);
+
 			System.out.printf("%-5s %-35s %-25s\n", "ID", "Course", "Instructor");
 			for (Course course : allCourses) {
 				System.out.printf("%-5s %-35s %-25s\n", course.getCId(), course.getCName(), course.getCInstructorName());

@@ -10,9 +10,39 @@ import lombok.extern.log4j.Log4j;
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
+import java.util.Scanner;
 
 @Log4j
 public class StudentService implements StudentDAO {
+
+    public void AddStudent(){
+        // opens entity manager
+        EntityManager em = SMSRunner.emf.createEntityManager();
+        // start a scanner
+        Scanner input = new Scanner(System.in);
+
+        // start transaction
+        em.getTransaction().begin();
+
+        // make a new student
+        Student s = new Student();
+        // enter and set full name of student
+        System.out.println("Enter Student Full Name :");
+        s.setSName(input.nextLine().trim());
+        // enter and set email of student
+        System.out.println("Enter Student Email :");
+        s.setSEmail(input.nextLine().trim());
+        // enter and set password of student
+        System.out.println("Enter Student Full Name :");
+        s.setSPass(input.nextLine().trim());
+
+        // persist the new student to the database
+        em.persist(s);
+        //commit the transaction
+        em.getTransaction().commit();
+        // close entity manager
+        em.close();
+    }
 
     @Override
     public List<Student> getAllStudents() {

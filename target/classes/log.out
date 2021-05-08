@@ -45,121 +45,121 @@ HHH000206: hibernate.properties not found
 Overriding existing service binding [org.hibernate.secure.spi.JaccService]
 Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
 HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-Adding type registration boolean -> org.hibernate.type.BooleanType@345f69f3
-Adding type registration boolean -> org.hibernate.type.BooleanType@345f69f3
-Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@345f69f3
-Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@51549490
-Adding type registration true_false -> org.hibernate.type.TrueFalseType@432038ec
-Adding type registration yes_no -> org.hibernate.type.YesNoType@181e731e
-Adding type registration byte -> org.hibernate.type.ByteType@5ef5c734
-Adding type registration byte -> org.hibernate.type.ByteType@5ef5c734
-Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@5ef5c734
-Adding type registration character -> org.hibernate.type.CharacterType@5b367418
-Adding type registration char -> org.hibernate.type.CharacterType@5b367418
-Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@5b367418
-Adding type registration short -> org.hibernate.type.ShortType@12d2ce03
-Adding type registration short -> org.hibernate.type.ShortType@12d2ce03
-Adding type registration java.lang.Short -> org.hibernate.type.ShortType@12d2ce03
-Adding type registration integer -> org.hibernate.type.IntegerType@39ac0c0a
-Adding type registration int -> org.hibernate.type.IntegerType@39ac0c0a
-Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@39ac0c0a
-Adding type registration long -> org.hibernate.type.LongType@327bcebd
-Adding type registration long -> org.hibernate.type.LongType@327bcebd
-Adding type registration java.lang.Long -> org.hibernate.type.LongType@327bcebd
-Adding type registration float -> org.hibernate.type.FloatType@49c66ade
-Adding type registration float -> org.hibernate.type.FloatType@49c66ade
-Adding type registration java.lang.Float -> org.hibernate.type.FloatType@49c66ade
-Adding type registration double -> org.hibernate.type.DoubleType@4f3bbf68
-Adding type registration double -> org.hibernate.type.DoubleType@4f3bbf68
-Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@4f3bbf68
-Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@59a008ba
-Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@59a008ba
-Adding type registration big_integer -> org.hibernate.type.BigIntegerType@b4711e2
-Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@b4711e2
-Adding type registration string -> org.hibernate.type.StringType@5b6ec132
-Adding type registration java.lang.String -> org.hibernate.type.StringType@5b6ec132
-Adding type registration nstring -> org.hibernate.type.StringNVarcharType@132e0cc
-Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@6cc558c6
-Adding type registration url -> org.hibernate.type.UrlType@5c2375a9
-Adding type registration java.net.URL -> org.hibernate.type.UrlType@5c2375a9
-Adding type registration Duration -> org.hibernate.type.DurationType@558bdf1f
-Adding type registration java.time.Duration -> org.hibernate.type.DurationType@558bdf1f
-Adding type registration Instant -> org.hibernate.type.InstantType@56928307
-Adding type registration java.time.Instant -> org.hibernate.type.InstantType@56928307
-Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@66c92293
-Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@66c92293
-Adding type registration LocalDate -> org.hibernate.type.LocalDateType@1e097d59
-Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@1e097d59
-Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@77128536
-Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@77128536
-Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@5a755cc1
-Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@5a755cc1
-Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@2c07545f
-Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@2c07545f
-Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@29526c05
-Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@29526c05
-Adding type registration date -> org.hibernate.type.DateType@e70f13a
-Adding type registration java.sql.Date -> org.hibernate.type.DateType@e70f13a
-Adding type registration time -> org.hibernate.type.TimeType@466276d8
-Adding type registration java.sql.Time -> org.hibernate.type.TimeType@466276d8
-Adding type registration timestamp -> org.hibernate.type.TimestampType@24ba9639
-Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@24ba9639
-Adding type registration java.util.Date -> org.hibernate.type.TimestampType@24ba9639
-Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@1b84f475
-Adding type registration calendar -> org.hibernate.type.CalendarType@6f63b475
-Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@6f63b475
-Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@6f63b475
-Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@b2c5e07
-Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@336f1079
-Adding type registration locale -> org.hibernate.type.LocaleType@6dab9b6d
-Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@6dab9b6d
-Adding type registration currency -> org.hibernate.type.CurrencyType@6d025197
-Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@6d025197
-Adding type registration timezone -> org.hibernate.type.TimeZoneType@1b955cac
-Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@1b955cac
-Adding type registration class -> org.hibernate.type.ClassType@6eb2384f
-Adding type registration java.lang.Class -> org.hibernate.type.ClassType@6eb2384f
-Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@7e6ef134
-Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@7e6ef134
-Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@1921ad94
-Adding type registration binary -> org.hibernate.type.BinaryType@30af5b6b
-Adding type registration byte[] -> org.hibernate.type.BinaryType@30af5b6b
-Adding type registration [B -> org.hibernate.type.BinaryType@30af5b6b
-Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@4f9a2c08
-Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@4f9a2c08
-Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@4f9a2c08
-Adding type registration row_version -> org.hibernate.type.RowVersionType@22356acd
-Adding type registration image -> org.hibernate.type.ImageType@3d1848cc
-Adding type registration characters -> org.hibernate.type.CharArrayType@648c94da
-Adding type registration char[] -> org.hibernate.type.CharArrayType@648c94da
-Adding type registration [C -> org.hibernate.type.CharArrayType@648c94da
-Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@24111ef1
-Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@24111ef1
-Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@24111ef1
-Adding type registration text -> org.hibernate.type.TextType@71812481
-Adding type registration ntext -> org.hibernate.type.NTextType@47f9738
-Adding type registration blob -> org.hibernate.type.BlobType@42bc14c1
-Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@42bc14c1
-Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@460ebd80
-Adding type registration clob -> org.hibernate.type.ClobType@51acdf2e
-Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@51acdf2e
-Adding type registration nclob -> org.hibernate.type.NClobType@403f0a22
-Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@403f0a22
-Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@5143c662
-Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@3e7dd664
-Adding type registration serializable -> org.hibernate.type.SerializableType@74bada02
-Adding type registration object -> org.hibernate.type.ObjectType@134d26af
-Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@134d26af
-Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@4b3ed2f0
-Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@4fad9bb2
-Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@517d4a0d
-Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@7862f56
-Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@3a12c404
-Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@1941a8ff
-Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@22d7b4f8
-Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@149dd36b
-Injecting ScanEnvironment [org.hibernate.jpa.boot.internal.StandardJpaScanEnvironmentImpl@16c63f5] into BootstrapContext; was [null]
-Injecting ScanOptions [org.hibernate.boot.archive.scan.internal.StandardScanOptions@35229f85] into BootstrapContext; was [org.hibernate.boot.archive.scan.internal.StandardScanOptions@6d3c5255]
+Adding type registration boolean -> org.hibernate.type.BooleanType@457c9034
+Adding type registration boolean -> org.hibernate.type.BooleanType@457c9034
+Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@457c9034
+Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@1e8b7643
+Adding type registration true_false -> org.hibernate.type.TrueFalseType@36a5cabc
+Adding type registration yes_no -> org.hibernate.type.YesNoType@5a3bc7ed
+Adding type registration byte -> org.hibernate.type.ByteType@16eccb2e
+Adding type registration byte -> org.hibernate.type.ByteType@16eccb2e
+Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@16eccb2e
+Adding type registration character -> org.hibernate.type.CharacterType@1583741e
+Adding type registration char -> org.hibernate.type.CharacterType@1583741e
+Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@1583741e
+Adding type registration short -> org.hibernate.type.ShortType@7d446ed1
+Adding type registration short -> org.hibernate.type.ShortType@7d446ed1
+Adding type registration java.lang.Short -> org.hibernate.type.ShortType@7d446ed1
+Adding type registration integer -> org.hibernate.type.IntegerType@3bd323e9
+Adding type registration int -> org.hibernate.type.IntegerType@3bd323e9
+Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@3bd323e9
+Adding type registration long -> org.hibernate.type.LongType@6c4980d3
+Adding type registration long -> org.hibernate.type.LongType@6c4980d3
+Adding type registration java.lang.Long -> org.hibernate.type.LongType@6c4980d3
+Adding type registration float -> org.hibernate.type.FloatType@1fb669c3
+Adding type registration float -> org.hibernate.type.FloatType@1fb669c3
+Adding type registration java.lang.Float -> org.hibernate.type.FloatType@1fb669c3
+Adding type registration double -> org.hibernate.type.DoubleType@7164ca4c
+Adding type registration double -> org.hibernate.type.DoubleType@7164ca4c
+Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@7164ca4c
+Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@30c93896
+Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@30c93896
+Adding type registration big_integer -> org.hibernate.type.BigIntegerType@2796aeae
+Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@2796aeae
+Adding type registration string -> org.hibernate.type.StringType@31ff43be
+Adding type registration java.lang.String -> org.hibernate.type.StringType@31ff43be
+Adding type registration nstring -> org.hibernate.type.StringNVarcharType@2c78d320
+Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@7a67e3c6
+Adding type registration url -> org.hibernate.type.UrlType@d41f816
+Adding type registration java.net.URL -> org.hibernate.type.UrlType@d41f816
+Adding type registration Duration -> org.hibernate.type.DurationType@27216cd
+Adding type registration java.time.Duration -> org.hibernate.type.DurationType@27216cd
+Adding type registration Instant -> org.hibernate.type.InstantType@5ba88be8
+Adding type registration java.time.Instant -> org.hibernate.type.InstantType@5ba88be8
+Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@30e868be
+Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@30e868be
+Adding type registration LocalDate -> org.hibernate.type.LocalDateType@5bf0fe62
+Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@5bf0fe62
+Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@3fed2870
+Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@3fed2870
+Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@598bd2ba
+Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@598bd2ba
+Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@602e0143
+Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@602e0143
+Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@49ff7d8c
+Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@49ff7d8c
+Adding type registration date -> org.hibernate.type.DateType@2bd08376
+Adding type registration java.sql.Date -> org.hibernate.type.DateType@2bd08376
+Adding type registration time -> org.hibernate.type.TimeType@528c868
+Adding type registration java.sql.Time -> org.hibernate.type.TimeType@528c868
+Adding type registration timestamp -> org.hibernate.type.TimestampType@2f62ea70
+Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@2f62ea70
+Adding type registration java.util.Date -> org.hibernate.type.TimestampType@2f62ea70
+Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@6bffbc6d
+Adding type registration calendar -> org.hibernate.type.CalendarType@4331d187
+Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@4331d187
+Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@4331d187
+Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@29ca3d04
+Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@6b88ca8c
+Adding type registration locale -> org.hibernate.type.LocaleType@53941c2f
+Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@53941c2f
+Adding type registration currency -> org.hibernate.type.CurrencyType@3fc9504b
+Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@3fc9504b
+Adding type registration timezone -> org.hibernate.type.TimeZoneType@72437d8d
+Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@72437d8d
+Adding type registration class -> org.hibernate.type.ClassType@73194df
+Adding type registration java.lang.Class -> org.hibernate.type.ClassType@73194df
+Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@19b93fa8
+Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@19b93fa8
+Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@10cf09e8
+Adding type registration binary -> org.hibernate.type.BinaryType@8ad6665
+Adding type registration byte[] -> org.hibernate.type.BinaryType@8ad6665
+Adding type registration [B -> org.hibernate.type.BinaryType@8ad6665
+Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@33308786
+Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@33308786
+Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@33308786
+Adding type registration row_version -> org.hibernate.type.RowVersionType@2e1ef60
+Adding type registration image -> org.hibernate.type.ImageType@34f22f9d
+Adding type registration characters -> org.hibernate.type.CharArrayType@5e4bd84a
+Adding type registration char[] -> org.hibernate.type.CharArrayType@5e4bd84a
+Adding type registration [C -> org.hibernate.type.CharArrayType@5e4bd84a
+Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@4ce1d6d0
+Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@4ce1d6d0
+Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@4ce1d6d0
+Adding type registration text -> org.hibernate.type.TextType@5dcb4f5f
+Adding type registration ntext -> org.hibernate.type.NTextType@7ca20101
+Adding type registration blob -> org.hibernate.type.BlobType@7803bfd
+Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@7803bfd
+Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@6436a7db
+Adding type registration clob -> org.hibernate.type.ClobType@dbd8e44
+Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@dbd8e44
+Adding type registration nclob -> org.hibernate.type.NClobType@3da30852
+Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@3da30852
+Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@6995bf68
+Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@71c27ee8
+Adding type registration serializable -> org.hibernate.type.SerializableType@16414e40
+Adding type registration object -> org.hibernate.type.ObjectType@5d12a356
+Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@5d12a356
+Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@31bcf236
+Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@4b3ed2f0
+Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@4fad9bb2
+Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@517d4a0d
+Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@7862f56
+Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@3a12c404
+Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@1941a8ff
+Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@22d7b4f8
+Injecting ScanEnvironment [org.hibernate.jpa.boot.internal.StandardJpaScanEnvironmentImpl@2a898881] into BootstrapContext; was [null]
+Injecting ScanOptions [org.hibernate.boot.archive.scan.internal.StandardScanOptions@16c63f5] into BootstrapContext; was [org.hibernate.boot.archive.scan.internal.StandardScanOptions@35229f85]
 Injecting JPA temp ClassLoader [null] into BootstrapContext; was [null]
 ClassLoaderAccessImpl#injectTempClassLoader(null) [was null]
 Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
@@ -647,7 +647,7 @@ select << begin [level=1, statement=select]
 FromClause{level=1} : jpa.entitymodels.StudentCourses (c) -> studentcou0_
 Resolved : c -> studentcou0_.course_id, studentcou0_.student_email
 Resolved : c -> (studentcou0_.course_id, studentcou0_.student_email)
-getDataType() : eMail -> org.hibernate.type.StringType@5b6ec132
+getDataType() : eMail -> org.hibernate.type.StringType@31ff43be
 Resolved : c.eMail -> studentcou0_.student_email
 select : finishing up [level=1, statement=select]
 processQuery() :  ( SELECT ( {select clause} studentcou0_.course_id, studentcou0_.student_email ) ( FromClause{level=1} StudentCourses studentcou0_ ) ( WHERE ( = ( studentcou0_.student_email (studentcou0_.course_id, studentcou0_.student_email) eMail ) ? ) ) )
@@ -686,7 +686,7 @@ select >> end [level=1, statement=select]
           +-[DOT] DotNode: 'studentcou0_.student_email' {propertyName=eMail,dereferenceType=PRIMITIVE,getPropertyPath=eMail,path=c.eMail,tableAlias=studentcou0_,className=jpa.entitymodels.StudentCourses,classAlias=c}
           |  +-[ALIAS_REF] IdentNode: '(studentcou0_.course_id, studentcou0_.student_email)' {alias=c, className=jpa.entitymodels.StudentCourses, tableAlias=studentcou0_}
           |  \-[IDENT] IdentNode: 'eMail' {originalText=eMail}
-          \-[NAMED_PARAM] ParameterNode: '?' {name=email, expectedType=org.hibernate.type.StringType@5b6ec132}
+          \-[NAMED_PARAM] ParameterNode: '?' {name=email, expectedType=org.hibernate.type.StringType@31ff43be}
 
 throwQueryException() : no errors
 HQL: SELECT c FROM jpa.entitymodels.StudentCourses c WHERE c.eMail = :email
@@ -720,7 +720,7 @@ select << begin [level=1, statement=select]
 FromClause{level=1} : jpa.entitymodels.Course (c) -> course0_
 Resolved : c -> course0_.id
 Resolved : c -> course0_.id
-getDataType() : cId -> org.hibernate.type.IntegerType@39ac0c0a
+getDataType() : cId -> org.hibernate.type.IntegerType@3bd323e9
 Resolved : c.cId -> course0_.id
 select : finishing up [level=1, statement=select]
 processQuery() :  ( SELECT ( {select clause} course0_.id ) ( FromClause{level=1} Course course0_ ) ( WHERE ( = ( course0_.id course0_.id cId ) ? ) ) )
@@ -761,7 +761,7 @@ select >> end [level=1, statement=select]
           +-[DOT] DotNode: 'course0_.id' {propertyName=cId,dereferenceType=PRIMITIVE,getPropertyPath=cId,path=c.cId,tableAlias=course0_,className=jpa.entitymodels.Course,classAlias=c}
           |  +-[ALIAS_REF] IdentNode: 'course0_.id' {alias=c, className=jpa.entitymodels.Course, tableAlias=course0_}
           |  \-[IDENT] IdentNode: 'cId' {originalText=cId}
-          \-[NAMED_PARAM] ParameterNode: '?' {name=id, expectedType=org.hibernate.type.IntegerType@39ac0c0a}
+          \-[NAMED_PARAM] ParameterNode: '?' {name=id, expectedType=org.hibernate.type.IntegerType@3bd323e9}
 
 throwQueryException() : no errors
 HQL: SELECT c FROM jpa.entitymodels.Course c WHERE c.cId = :id
@@ -792,7 +792,7 @@ throwQueryException() : no errors
 select << begin [level=1, statement=select]
 FromClause{level=1} : jpa.entitymodels.Student (s) -> student0_
 Resolved : s -> student0_.email
-getDataType() : sEmail -> org.hibernate.type.StringType@5b6ec132
+getDataType() : sEmail -> org.hibernate.type.StringType@31ff43be
 Resolved : s.sEmail -> student0_.email
 select : finishing up [level=1, statement=select]
 processQuery() :  ( SELECT ( FromClause{level=1} Student student0_ ) ( WHERE ( = ( student0_.email student0_.email sEmail ) ? ) ) )
@@ -833,7 +833,7 @@ select >> end [level=1, statement=select]
           +-[DOT] DotNode: 'student0_.email' {propertyName=sEmail,dereferenceType=PRIMITIVE,getPropertyPath=sEmail,path=s.sEmail,tableAlias=student0_,className=jpa.entitymodels.Student,classAlias=s}
           |  +-[ALIAS_REF] IdentNode: 'student0_.email' {alias=s, className=jpa.entitymodels.Student, tableAlias=student0_}
           |  \-[IDENT] IdentNode: 'sEmail' {originalText=sEmail}
-          \-[NAMED_PARAM] ParameterNode: '?' {name=email, expectedType=org.hibernate.type.StringType@5b6ec132}
+          \-[NAMED_PARAM] ParameterNode: '?' {name=email, expectedType=org.hibernate.type.StringType@31ff43be}
 
 throwQueryException() : no errors
 HQL: FROM jpa.entitymodels.Student s WHERE s.sEmail = :email
@@ -841,7 +841,7 @@ SQL: select student0_.email as email1_1_, student0_.name as name2_1_, student0_.
 throwQueryException() : no errors
 Checking 0 named SQL queries
 Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@51d719bc
-Registering SessionFactory: a82f70b6-9411-498b-8ccd-82e2e16b55ef (<unnamed>)
+Registering SessionFactory: 49599adf-f25f-4739-b05c-7512d8f08dc4 (<unnamed>)
 Not binding SessionFactory to JNDI, no JNDI name configured
 On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
 begin
@@ -855,3 +855,105 @@ begin
     where
         student0_.email=?
 commit issue or no records found!
+On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+begin
+
+    select
+        student0_.email as email1_1_,
+        student0_.name as name2_1_,
+        student0_.password as password3_1_ 
+    from
+        Student student0_ 
+    where
+        student0_.email=?
+Result set row: 0
+Result row: EntityKey[jpa.entitymodels.Student#email1]
+Resolving attributes for [jpa.entitymodels.Student#email1]
+Processing attribute `sCourses` : value = NOT NULL COLLECTION
+Attribute (`sCourses`)  - enhanced for lazy-loading? - false
+Processing attribute `sName` : value = name
+Attribute (`sName`)  - enhanced for lazy-loading? - false
+Processing attribute `sPass` : value = 1111
+Attribute (`sPass`)  - enhanced for lazy-loading? - false
+Done materializing entity [jpa.entitymodels.Student#email1]
+Processing flush-time cascades
+Dirty checking collections
+Collection found: [jpa.entitymodels.Student.sCourses#email1], was: [jpa.entitymodels.Student.sCourses#email1] (uninitialized)
+Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+Flushed: 0 (re)creations, 0 updates, 0 removals to 1 collections
+Listing entities:
+jpa.entitymodels.Student{sEmail=email1, sName=name, sCourses=<uninitialized>, sPass=1111}
+
+    select
+        student0_.email as email1_1_,
+        student0_.name as name2_1_,
+        student0_.password as password3_1_ 
+    from
+        Student student0_ 
+    where
+        student0_.email=?
+Result set row: 0
+Result row: EntityKey[jpa.entitymodels.Student#email1]
+committing
+Processing flush-time cascades
+Dirty checking collections
+Collection found: [jpa.entitymodels.Student.sCourses#email1], was: [jpa.entitymodels.Student.sCourses#email1] (uninitialized)
+Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+Flushed: 0 (re)creations, 0 updates, 0 removals to 1 collections
+Listing entities:
+jpa.entitymodels.Student{sEmail=email1, sName=name, sCourses=<uninitialized>, sPass=1111}
+Initiating JDBC connection release from afterTransaction
+Initiating JDBC connection release from afterTransaction
+On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+begin
+
+    select
+        studentcou0_.course_id as course_i1_2_,
+        studentcou0_.student_email as student_2_2_ 
+    from
+        StudentCourses studentcou0_ 
+    where
+        studentcou0_.student_email=?
+Result set row: 0
+Result row: EntityKey[jpa.entitymodels.StudentCourses#component[courseID,eMail]{courseID=1, eMail=email1}]
+Resolving attributes for [jpa.entitymodels.StudentCourses#component[courseID,eMail]{courseID=1, eMail=email1}]
+Processing attribute `_identifierMapper` : value = [Ljava.lang.Object;@2b38b1f
+Attribute (`_identifierMapper`)  - enhanced for lazy-loading? - false
+Done materializing entity [jpa.entitymodels.StudentCourses#component[courseID,eMail]{courseID=1, eMail=email1}]
+committing
+Processing flush-time cascades
+Dirty checking collections
+Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+Listing entities:
+jpa.entitymodels.StudentCourses{}
+Initiating JDBC connection release from afterTransaction
+Initiating JDBC connection release from afterTransaction
+On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+begin
+
+    select
+        course0_.id as id1_0_0_,
+        course0_.instructor as instruct2_0_0_,
+        course0_.name as name3_0_0_ 
+    from
+        Course course0_ 
+    where
+        course0_.id=?
+On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+Resolving attributes for [jpa.entitymodels.Course#1]
+Processing attribute `cInstructorName` : value = Anderea Scamaden
+Attribute (`cInstructorName`)  - enhanced for lazy-loading? - false
+Processing attribute `cName` : value = English
+Attribute (`cName`)  - enhanced for lazy-loading? - false
+Done materializing entity [jpa.entitymodels.Course#1]
+Done entity load : jpa.entitymodels.Course#1
+committing
+Processing flush-time cascades
+Dirty checking collections
+Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+Listing entities:
+jpa.entitymodels.Course{cInstructorName=Anderea Scamaden, cName=English, cId=1}
+Initiating JDBC connection release from afterTransaction
+Initiating JDBC connection release from afterTransaction
