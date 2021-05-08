@@ -12,9 +12,10 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.Query;
 import javax.persistence.RollbackException;
 import java.util.List;
+import java.util.Objects;
+
 @Log4j
 public class StudentService implements StudentDAO {
-
 
     @Override
     public List<Student> getAllStudents() {
@@ -44,15 +45,13 @@ public class StudentService implements StudentDAO {
         try {
             // begins transaction
             em.getTransaction().begin();
-            // sets q to the named query find all students
             Query q = em.createNamedQuery("Find student by email");
-            // sets email parameter for search
             q.setParameter("email", email);
 
             s = (Student) q.getSingleResult();
             //close everything
             em.getTransaction().commit();
-
+            return s;
         } catch(IllegalArgumentException | EntityNotFoundException | RollbackException ex){
             // print stack trace and log the error
             ex.printStackTrace();
@@ -74,12 +73,7 @@ public class StudentService implements StudentDAO {
         Student s = getStudentByEmail(email);
 
         if (s!=null){
-            if (s.getSEmail()==email){
-                return true;
-            }
-            else {
-                return false;
-            }
+            return s.getSEmail().equals(email);
         }
         else {
             return false;
@@ -132,10 +126,10 @@ public class StudentService implements StudentDAO {
     }
 
 
-    public List<Course> getStudentCourses(String email) {
+    public List<StudentCourses> getStudentCourses(String email) {
         // opens entity manager
         EntityManager em = SMSRunner.emf.createEntityManager();
-        List<Course> c = null;
+        List<StudentCourses> c = null;
         // do a try catch finally to catch exceptions
         try {
             // begins transaction
@@ -159,6 +153,11 @@ public class StudentService implements StudentDAO {
         }
         // returns course list
         return c;
-
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
 }

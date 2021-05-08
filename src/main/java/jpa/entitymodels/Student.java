@@ -17,7 +17,7 @@ import java.util.*;
 @NamedQueries({
         // created named queries
         @NamedQuery(name = "Find all students", query = "SELECT s FROM Student s"),
-        @NamedQuery(name = "Find student by email", query = "SELECT s FROM Student s WHERE s.sEmail = :email")
+        @NamedQuery(name = "Find student by email", query = "FROM Student s WHERE s.sEmail = :email")
 })
 public class Student {
     // makes email primary key

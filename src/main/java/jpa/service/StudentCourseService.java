@@ -22,13 +22,16 @@ public class StudentCourseService {
             // begins transaction
             em.getTransaction().begin();
             // sets q to the named query find all student courses
-            Query q = em.createQuery("SELECT sc FROM StudentCourses sc WHERE sc.email = :email");
+            Query q = em.createQuery("SELECT sc FROM StudentCourses sc WHERE sc.eMail = :email");
             // sets email parameter for search
             q.setParameter("email", email);
 
             sc = q.getResultList();
+
             //close everything
             em.getTransaction().commit();
+
+            return sc;
 
         } catch(IllegalArgumentException | EntityNotFoundException | RollbackException ex){
             // print stack trace and log the error

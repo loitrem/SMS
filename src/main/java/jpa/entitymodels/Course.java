@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Entity
 @NamedQueries({
         // created named queries
-        @NamedQuery(name = "Find course by id", query = "SELECT c FROM Course c WHERE c.id = :id"),
+        @NamedQuery(name = "Find course by id", query = "SELECT c FROM Course c WHERE c.cId = :id"),
         @NamedQuery( name="Find all courses", query="Select c from Course c")
 })
 public class Course {
@@ -30,4 +30,11 @@ public class Course {
     String cName;
     @Column(columnDefinition = "VARCHAR(50)", name = "instructor", nullable = false)
     String cInstructorName;
+
+    @Override
+    public String toString() {
+        return "cId=" + cId +
+                ", cName='" + cName +
+                ", cInstructorName='" + cInstructorName;
+    }
 }

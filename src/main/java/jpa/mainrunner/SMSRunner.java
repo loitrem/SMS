@@ -90,55 +90,70 @@ public class SMSRunner {
 			currentStudent = students;
 		}
 
-		if (currentStudent != null & currentStudent.getSPass().equals(password)) {
-			List<Course> courses = studentService.getStudentCourses(email);
+		if (currentStudent != null && currentStudent.getSPass().equals(password)) {
+			List<StudentCourses> courses = studentService.getStudentCourses(email);
 			out.println("MyClasses");
-			for (Course course : courses) {
-				out.println(course);
+			Course c = new Course();
+			CourseService cs = new CourseService();
+			System.out.printf("%-5s %-35s %-25s\n", "ID", "Course Name", "Instructor Name");
+			for (StudentCourses course : courses) {
+				c.setCId(course.getCourseID());
+				Course c1 = cs.getCourseById(c.getCId());
+
+				System.out.printf("%-5s %-35s %-25s\n", c1.getCId(), c1.getCName(), c1.getCInstructorName());
+
 			}
 			retValue = true;
 		} else {
-			out.println("User Validation failed. GoodBye!");
+			System.out.println("User Validation failed. GoodBye!");
 		}
 		return retValue;
 	}
 
 	private void registerMenu() {
 		sb.append("\n1.Register a class\n2. Logout\nPlease Enter Selection: ");
-		out.print(sb.toString());
+		System.out.print(sb.toString());
 		sb.delete(0, sb.length());
 
 		switch (sin.nextInt()) {
 		case 1:
 			List<Course> allCourses = courseService.getAllCourses();
-			List<Course> studentCourses = studentService.getStudentCourses(currentStudent.getSEmail());
-			allCourses.removeAll(studentCourses);
-			out.printf("%5s %15s %15s\n", "ID", "Course", "Instructor");
+			//List<Course> studentCourses = studentService.getStudentCourses(currentStudent.getSEmail());
+			//allCourses.removeAll(studentCourses);
+			System.out.printf("%-5s %-35s %-25s\n", "ID", "Course", "Instructor");
 			for (Course course : allCourses) {
-				out.println(course);
+				System.out.printf("%-5s %-35s %-25s\n", course.getCId(), course.getCName(), course.getCInstructorName());
+
 			}
-			out.println();
-			out.print("Enter Course Number: ");
+			System.out.println();
+			System.out.print("Enter Course Number: ");
 			int number = sin.nextInt();
 			Course newCourse = courseService.getCourseById(number);
 
 			if (newCourse != null) {
 				studentService.registerStudentToCourse(currentStudent.getSEmail(), newCourse.getCId());
 				Student temp = studentService.getStudentByEmail(currentStudent.getSEmail());
-				
+
 				StudentCourseService scService = new StudentCourseService();
 				List<StudentCourses> sCourses = scService.getAllStudentCourses(temp.getSEmail());
-				
 
-				out.println("MyClasses");
+				Course c = new Course();
+				CourseService cs = new CourseService();
+				System.out.printf("%-5s %-35s %-25s\n", "ID", "Course Name", "Instructor Name");
+				System.out.println("MyClasses");
 				for (StudentCourses course : sCourses) {
-					out.println(course);
+					c.setCId(course.getCourseID());
+					Course c1 = cs.getCourseById(c.getCId());
+
+					System.out.printf("%-5s %-35s %-25s\n", c1.getCId(), c1.getCName(), c1.getCInstructorName());
+
 				}
 			}
 			break;
 		case 2:
 		default:
-			out.println("Goodbye!");
+			System.out.println("Goodbye!");
 		}
 	}
+
 }
