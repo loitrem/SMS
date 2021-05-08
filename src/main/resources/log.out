@@ -841,5 +841,177 @@ SQL: select student0_.email as email1_1_, student0_.name as name2_1_, student0_.
 throwQueryException() : no errors
 Checking 0 named SQL queries
 Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@2d38edfd
-Registering SessionFactory: aa3b71c5-b6a0-43be-9939-fb34fe7b3a21 (<unnamed>)
+Registering SessionFactory: 57b9177f-84b9-459f-9d25-3b168ab7f1ab (<unnamed>)
 Not binding SessionFactory to JNDI, no JNDI name configured
+On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+begin
+
+    select
+        student0_.email as email1_1_,
+        student0_.name as name2_1_,
+        student0_.password as password3_1_ 
+    from
+        Student student0_ 
+    where
+        student0_.email=?
+Result set row: 0
+Result row: EntityKey[jpa.entitymodels.Student#email1]
+Resolving attributes for [jpa.entitymodels.Student#email1]
+Processing attribute `sCourses` : value = NOT NULL COLLECTION
+Attribute (`sCourses`)  - enhanced for lazy-loading? - false
+Processing attribute `sName` : value = name
+Attribute (`sName`)  - enhanced for lazy-loading? - false
+Processing attribute `sPass` : value = 1
+Attribute (`sPass`)  - enhanced for lazy-loading? - false
+Done materializing entity [jpa.entitymodels.Student#email1]
+Processing flush-time cascades
+Dirty checking collections
+Collection found: [jpa.entitymodels.Student.sCourses#email1], was: [jpa.entitymodels.Student.sCourses#email1] (uninitialized)
+Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+Flushed: 0 (re)creations, 0 updates, 0 removals to 1 collections
+Listing entities:
+jpa.entitymodels.Student{sEmail=email1, sName=name, sCourses=<uninitialized>, sPass=1}
+
+    select
+        student0_.email as email1_1_,
+        student0_.name as name2_1_,
+        student0_.password as password3_1_ 
+    from
+        Student student0_ 
+    where
+        student0_.email=?
+Result set row: 0
+Result row: EntityKey[jpa.entitymodels.Student#email1]
+committing
+Processing flush-time cascades
+Dirty checking collections
+Collection found: [jpa.entitymodels.Student.sCourses#email1], was: [jpa.entitymodels.Student.sCourses#email1] (uninitialized)
+Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+Flushed: 0 (re)creations, 0 updates, 0 removals to 1 collections
+Listing entities:
+jpa.entitymodels.Student{sEmail=email1, sName=name, sCourses=<uninitialized>, sPass=1}
+Initiating JDBC connection release from afterTransaction
+Initiating JDBC connection release from afterTransaction
+On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+begin
+
+    select
+        studentcou0_.course_id as course_i1_2_,
+        studentcou0_.student_email as student_2_2_ 
+    from
+        StudentCourses studentcou0_ 
+    where
+        studentcou0_.student_email=?
+Result set row: 0
+Result row: EntityKey[jpa.entitymodels.StudentCourses#component[courseID,eMail]{courseID=3, eMail=email1}]
+Result set row: 1
+Result row: EntityKey[jpa.entitymodels.StudentCourses#component[courseID,eMail]{courseID=4, eMail=email1}]
+Result set row: 2
+Result row: EntityKey[jpa.entitymodels.StudentCourses#component[courseID,eMail]{courseID=8, eMail=email1}]
+Resolving attributes for [jpa.entitymodels.StudentCourses#component[courseID,eMail]{courseID=3, eMail=email1}]
+Processing attribute `_identifierMapper` : value = [Ljava.lang.Object;@2b38b1f
+Attribute (`_identifierMapper`)  - enhanced for lazy-loading? - false
+Done materializing entity [jpa.entitymodels.StudentCourses#component[courseID,eMail]{courseID=3, eMail=email1}]
+Resolving attributes for [jpa.entitymodels.StudentCourses#component[courseID,eMail]{courseID=4, eMail=email1}]
+Processing attribute `_identifierMapper` : value = [Ljava.lang.Object;@1d50a7ca
+Attribute (`_identifierMapper`)  - enhanced for lazy-loading? - false
+Done materializing entity [jpa.entitymodels.StudentCourses#component[courseID,eMail]{courseID=4, eMail=email1}]
+Resolving attributes for [jpa.entitymodels.StudentCourses#component[courseID,eMail]{courseID=8, eMail=email1}]
+Processing attribute `_identifierMapper` : value = [Ljava.lang.Object;@51ab1ee3
+Attribute (`_identifierMapper`)  - enhanced for lazy-loading? - false
+Done materializing entity [jpa.entitymodels.StudentCourses#component[courseID,eMail]{courseID=8, eMail=email1}]
+committing
+Processing flush-time cascades
+Dirty checking collections
+Flushed: 0 insertions, 0 updates, 0 deletions to 3 objects
+Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+Listing entities:
+jpa.entitymodels.StudentCourses{}
+jpa.entitymodels.StudentCourses{}
+jpa.entitymodels.StudentCourses{}
+Initiating JDBC connection release from afterTransaction
+Initiating JDBC connection release from afterTransaction
+On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+begin
+
+    select
+        course0_.id as id1_0_0_,
+        course0_.instructor as instruct2_0_0_,
+        course0_.name as name3_0_0_ 
+    from
+        Course course0_ 
+    where
+        course0_.id=?
+On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+Resolving attributes for [jpa.entitymodels.Course#3]
+Processing attribute `cInstructorName` : value = Reynolds Pastor
+Attribute (`cInstructorName`)  - enhanced for lazy-loading? - false
+Processing attribute `cName` : value = Anatomy
+Attribute (`cName`)  - enhanced for lazy-loading? - false
+Done materializing entity [jpa.entitymodels.Course#3]
+Done entity load : jpa.entitymodels.Course#3
+committing
+Processing flush-time cascades
+Dirty checking collections
+Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+Listing entities:
+jpa.entitymodels.Course{cInstructorName=Reynolds Pastor, cName=Anatomy, cId=3}
+Initiating JDBC connection release from afterTransaction
+Initiating JDBC connection release from afterTransaction
+On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+begin
+
+    select
+        course0_.id as id1_0_0_,
+        course0_.instructor as instruct2_0_0_,
+        course0_.name as name3_0_0_ 
+    from
+        Course course0_ 
+    where
+        course0_.id=?
+On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+Resolving attributes for [jpa.entitymodels.Course#4]
+Processing attribute `cInstructorName` : value = Odessa Belcher
+Attribute (`cInstructorName`)  - enhanced for lazy-loading? - false
+Processing attribute `cName` : value = Organic Chemistry
+Attribute (`cName`)  - enhanced for lazy-loading? - false
+Done materializing entity [jpa.entitymodels.Course#4]
+Done entity load : jpa.entitymodels.Course#4
+committing
+Processing flush-time cascades
+Dirty checking collections
+Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+Listing entities:
+jpa.entitymodels.Course{cInstructorName=Odessa Belcher, cName=Organic Chemistry, cId=4}
+Initiating JDBC connection release from afterTransaction
+Initiating JDBC connection release from afterTransaction
+On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+begin
+
+    select
+        course0_.id as id1_0_0_,
+        course0_.instructor as instruct2_0_0_,
+        course0_.name as name3_0_0_ 
+    from
+        Course course0_ 
+    where
+        course0_.id=?
+On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+Resolving attributes for [jpa.entitymodels.Course#8]
+Processing attribute `cInstructorName` : value = Carolan Stoller
+Attribute (`cInstructorName`)  - enhanced for lazy-loading? - false
+Processing attribute `cName` : value = Data Structures
+Attribute (`cName`)  - enhanced for lazy-loading? - false
+Done materializing entity [jpa.entitymodels.Course#8]
+Done entity load : jpa.entitymodels.Course#8
+committing
+Processing flush-time cascades
+Dirty checking collections
+Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+Listing entities:
+jpa.entitymodels.Course{cInstructorName=Carolan Stoller, cName=Data Structures, cId=8}
+Initiating JDBC connection release from afterTransaction
+Initiating JDBC connection release from afterTransaction

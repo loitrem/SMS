@@ -15,7 +15,7 @@ import java.util.Scanner;
 @Log4j
 public class StudentService implements StudentDAO {
 
-    public void AddStudent(){
+    public void addStudent(){
         // opens entity manager
         EntityManager em = SMSRunner.emf.createEntityManager();
         // start a scanner
@@ -33,13 +33,16 @@ public class StudentService implements StudentDAO {
         System.out.println("Enter Student Email :");
         s.setSEmail(input.nextLine().trim());
         // enter and set password of student
-        System.out.println("Enter Student Full Name :");
+        System.out.println("Enter Student Password :");
         s.setSPass(input.nextLine().trim());
 
         // persist the new student to the database
         em.persist(s);
         //commit the transaction
         em.getTransaction().commit();
+
+        System.out.println("Student Added! - Name : " + s.getSName() + " | Email : " + s.getSEmail() + " | Password : " + s.getSPass());
+
         // close entity manager
         em.close();
     }
@@ -169,6 +172,58 @@ public class StudentService implements StudentDAO {
         }
     }
 
+    public boolean loggedIn(boolean b){
+        if(b){
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
+    public void removeStudentFromCourse(String email, int id){
+        Scanner input = new Scanner(System.in);
+        //started a new student courses and course service
+        StudentCourses sc = new StudentCourses();
+        sc.seteMail(email);
+        sc.setCourseID(id);
+        CourseService cs = new CourseService();
+        // set course to current course the student wishes to remove
+        Course c = cs.getCourseById(sc.getCourseID());
+        // sets cName to name of course
+        String cName = c.getCName();
+        // asking for confirmation to remove course
+        System.out.println("\nYou are about to remove: " + cName + "\nAre you sure?\n1. Remove course\n2. Do not remove course");
+        boolean repeat = true;
+        while (repeat){
+            switch (input.nextInt()) {
+
+                case 1:
+                    // opens entity manager
+                    EntityManager em = SMSRunner.emf.createEntityManager();
+                    // start transaction
+                    em.getTransaction().begin();
+                    // remove student from course
+                    Query q = em.createQuery("delete from StudentCourses sc where sc.courseID = :id and sc.eMail = :email");
+                    q.setParameter("email", email);
+                    q.setParameter("id", id);
+
+                    q.executeUpdate();
+                    // commit transaction
+                    em.getTransaction().commit();
+                    //close entity manager
+                    em.close();
+                    System.out.println("\nCourse has been removed.\n");
+                    repeat = false;
+                    break;
+                case 2:
+                    System.out.println("\nCourse has NOT been removed.\n");
+                    repeat = false;
+                    break;
+            }
+        }
+    }
 
     public List<StudentCourses> getStudentCourses(String email) {
         // opens entity manager
