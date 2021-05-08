@@ -7,10 +7,7 @@ import jpa.entitymodels.StudentCourses;
 import jpa.mainrunner.SMSRunner;
 import lombok.extern.log4j.Log4j;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityNotFoundException;
-import javax.persistence.Query;
-import javax.persistence.RollbackException;
+import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
@@ -41,21 +38,28 @@ public class StudentService implements StudentDAO {
         // opens entity manager
         EntityManager em = SMSRunner.emf.createEntityManager();
         Student s = null;
+        String pass=null;
         // do a try catch finally to catch exceptions
         try {
             // begins transaction
             em.getTransaction().begin();
             Query q = em.createNamedQuery("Find student by email");
+            //sets email paramater for query
             q.setParameter("email", email);
+            //if the query is empty
+            if (((Student) q.getSingleResult())!=null) {
+                //get query results
+                s = (Student) q.getSingleResult();
+                //commit transaction
+                em.getTransaction().commit();
+                //returns query results
+                return s;
 
-            s = (Student) q.getSingleResult();
-            //close everything
-            em.getTransaction().commit();
-            return s;
-        } catch(IllegalArgumentException | EntityNotFoundException | RollbackException ex){
-            // print stack trace and log the error
-            ex.printStackTrace();
+            }
+        } catch(NoResultException | IllegalArgumentException | EntityNotFoundException | RollbackException ex){
+            //log the error
             log.error("commit issue or no records found!");
+
         } finally {
             //closes entity manager
             em.close();
@@ -89,7 +93,8 @@ public class StudentService implements StudentDAO {
             // begins transaction
             em.getTransaction().begin();
             // sets q to the named query find all students
-            Query q = em.createNamedQuery("Find all studentcourses");
+            Query q = em.createNamedQuery("CoursesByStudent");
+            q.setParameter("email", email);
             // puts query results in a list
             List<StudentCourses> sc = q.getResultList();
             // creates a string to check against the result list
@@ -97,23 +102,32 @@ public class StudentService implements StudentDAO {
                     "email=" + email +
                     ", course_id='" + cId + "'" +
                     "}";
-            // sets a boolean to tell us if there was a match between supplied email and cId and what is in the database
+
             //creates new student courses
             StudentCourses sCourses = new StudentCourses();
-            // for loop to cycle through the list of results
-            for (StudentCourses studentCourses : sc) {
-                // if true input the email and id into the StudentCourses table
-                if (!studentCourses.toString().equals(checkResults)) {
+            // sc list is empty add the student course
+            if (sc.size()==0){
+                // sets variables for search
+                sCourses.setCourseID(cId);
+                sCourses.seteMail(email);
+                em.persist(sCourses);
+            }
+            else {
+                // for loop to cycle through the list of results
+                for (StudentCourses studentCourses : sc) {
+                    // if true input the email and id into the StudentCourses table
+                    if (!studentCourses.toString().equals(checkResults)) {
 
-                    // sets variables for search
-                    sCourses.seteMail(email);
-                    sCourses.setCourseID(cId);
-                    em.persist(sCourses);
+                        // sets variables for search
+                        sCourses.seteMail(email);
+                        sCourses.setCourseID(cId);
+                        em.persist(sCourses);
+                    }
                 }
             }
-
             //commit transaction
             em.getTransaction().commit();
+
 
         } catch (IllegalArgumentException | EntityNotFoundException | RollbackException ex) {
             // print stack trace and log the error

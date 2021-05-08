@@ -29,7 +29,7 @@ public class Student {
     String sName;
     @Column(columnDefinition = "VARCHAR(50)", name = "password", nullable = false)
     String sPass;
-    @OneToMany(cascade = CascadeType.ALL) @JoinColumn(name = "student_email") @ToString.Exclude
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true) @JoinColumn(name = "student_email") @ToString.Exclude
     List<StudentCourses> sCourses;
 
 }

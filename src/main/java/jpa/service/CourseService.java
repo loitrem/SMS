@@ -40,12 +40,9 @@ public class CourseService implements CourseDAO {
         try {
             // begins transaction
             em.getTransaction().begin();
-            // sets q to the named query find all students
-            Query q = em.createNamedQuery("Find course by id");
-            // sets email parameter for search
-            q.setParameter("id", id);
 
-            c = (Course) q.getSingleResult();
+            c = em.find(Course.class, id);
+
             //close everything
             em.getTransaction().commit();
 

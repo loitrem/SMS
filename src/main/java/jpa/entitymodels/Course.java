@@ -31,10 +31,4 @@ public class Course {
     @Column(columnDefinition = "VARCHAR(50)", name = "instructor", nullable = false)
     String cInstructorName;
 
-    @Override
-    public String toString() {
-        return "cId=" + cId +
-                ", cName='" + cName +
-                ", cInstructorName='" + cInstructorName;
-    }
 }
