@@ -98,13 +98,13 @@ public class StudentService implements StudentDAO {
                     ", course_id='" + cId + "'" +
                     "}";
             // sets a boolean to tell us if there was a match between supplied email and cId and what is in the database
-
+            //creates new student courses
+            StudentCourses sCourses = new StudentCourses();
             // for loop to cycle through the list of results
             for (StudentCourses studentCourses : sc) {
                 // if true input the email and id into the StudentCourses table
                 if (!studentCourses.toString().equals(checkResults)) {
-                    //creates new student courses
-                    StudentCourses sCourses = new StudentCourses();
+
                     // sets variables for search
                     sCourses.seteMail(email);
                     sCourses.setCourseID(cId);
