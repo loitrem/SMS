@@ -5,15 +5,17 @@
  */
 package jpa.entitymodels;
 
-import java.io.Serializable;
+import jdk.jfr.Name;
 
-import javax.persistence.Column;
+import java.io.Serializable;
+import javax.persistence.Embeddable;
 
 /**
 * Key class for composite key in Student Courses table
  * @author Harry
  *
  */
+
 public class StudentCoursesID implements Serializable {
 
 	private static final long serialVersionUID = 1L;

@@ -47,6 +47,50 @@ public class StudentService implements StudentDAO {
         em.close();
     }
 
+    public void removeStudentFromCourse(String email, int id){
+        //creates a scanner
+        Scanner input = new Scanner(System.in);
+        //started a new student courses and course service
+        StudentCourses sc = new StudentCourses();
+        sc.seteMail(email);
+        sc.setCourseID(id);
+        CourseService cs = new CourseService();
+        // set course to current course the student wishes to remove
+        Course c = cs.getCourseById(sc.getCourseID());
+        // sets cName to name of course
+        String cName = c.getCName();
+        // asking for confirmation to remove course
+        System.out.println("\nYou are about to remove: " + cName + "\nAre you sure?\n1. Remove course\n2. Do not remove course");
+        boolean repeat = true;
+        while (repeat){
+            switch (input.nextInt()) {
+
+                case 1:
+                    // opens entity manager
+                    EntityManager em = SMSRunner.emf.createEntityManager();
+                    // start transaction
+                    em.getTransaction().begin();
+                    // remove student from course
+                    Query q = em.createQuery("delete from StudentCourses sc where sc.courseID = :id and sc.eMail = :email");
+                    q.setParameter("email", email);
+                    q.setParameter("id", id);
+
+                    q.executeUpdate();
+                    // commit transaction
+                    em.getTransaction().commit();
+                    //close entity manager
+                    em.close();
+                    System.out.println("\nCourse has been removed.\n");
+                    repeat = false;
+                    break;
+                case 2:
+                    System.out.println("\nCourse has NOT been removed.\n");
+                    repeat = false;
+                    break;
+            }
+        }
+    }
+
     @Override
     public List<Student> getAllStudents() {
         // opens entity manager
@@ -110,7 +154,7 @@ public class StudentService implements StudentDAO {
         Student s = getStudentByEmail(email);
 
         if (s!=null){
-            return s.getSEmail().equals(email);
+            return s.getSPass().equals(pass);
         }
         else {
             return false;
@@ -180,49 +224,6 @@ public class StudentService implements StudentDAO {
             return false;
         }
 
-    }
-
-    public void removeStudentFromCourse(String email, int id){
-        Scanner input = new Scanner(System.in);
-        //started a new student courses and course service
-        StudentCourses sc = new StudentCourses();
-        sc.seteMail(email);
-        sc.setCourseID(id);
-        CourseService cs = new CourseService();
-        // set course to current course the student wishes to remove
-        Course c = cs.getCourseById(sc.getCourseID());
-        // sets cName to name of course
-        String cName = c.getCName();
-        // asking for confirmation to remove course
-        System.out.println("\nYou are about to remove: " + cName + "\nAre you sure?\n1. Remove course\n2. Do not remove course");
-        boolean repeat = true;
-        while (repeat){
-            switch (input.nextInt()) {
-
-                case 1:
-                    // opens entity manager
-                    EntityManager em = SMSRunner.emf.createEntityManager();
-                    // start transaction
-                    em.getTransaction().begin();
-                    // remove student from course
-                    Query q = em.createQuery("delete from StudentCourses sc where sc.courseID = :id and sc.eMail = :email");
-                    q.setParameter("email", email);
-                    q.setParameter("id", id);
-
-                    q.executeUpdate();
-                    // commit transaction
-                    em.getTransaction().commit();
-                    //close entity manager
-                    em.close();
-                    System.out.println("\nCourse has been removed.\n");
-                    repeat = false;
-                    break;
-                case 2:
-                    System.out.println("\nCourse has NOT been removed.\n");
-                    repeat = false;
-                    break;
-            }
-        }
     }
 
     public List<StudentCourses> getStudentCourses(String email) {

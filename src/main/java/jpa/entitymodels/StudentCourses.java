@@ -7,13 +7,7 @@ package jpa.entitymodels;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * @author Harry
@@ -29,7 +23,9 @@ import javax.persistence.Table;
 	@NamedQuery( name="Find all studentcourses", query="Select c from StudentCourses c")
 
 })
+
 public class StudentCourses {
+
 	//@Id makes email and course id primary key together
 	@Id
 	//rename in database
@@ -38,7 +34,7 @@ public class StudentCourses {
 
 	//no args constructor
 	public StudentCourses() {}
-	
+
 	/**
 	 * @param eMail
 	 * @param courseID
@@ -54,7 +50,8 @@ public class StudentCourses {
 	@Column(name="course_id")
 	private int courseID;
 
-	// getters and setters for all variables
+
+// getters and setters for all variables
 
 	/**
 	 * @return the eMail

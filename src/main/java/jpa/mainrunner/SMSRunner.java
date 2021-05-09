@@ -68,7 +68,9 @@ public class SMSRunner {
 					studentService.addStudent();
 					break;
 				case 3:
-					System.out.println("Goodbye!");
+					System.out.println("\n********" +
+							"\nGoodbye!" +
+							"\n********");
 					run = 0;
 					break;
 
@@ -90,7 +92,9 @@ public class SMSRunner {
 		try {
 			return sin.nextInt();
 		} catch (InputMismatchException e) {
-			System.out.println("Input error. Please choose a number from the menu to continue.");
+			System.out.println("\n**************************************************************" +
+					"\nInput error. Please choose a number from the menu to continue." +
+					"\n**************************************************************");
 			sin.nextLine();
 			run();
 
@@ -103,7 +107,7 @@ public class SMSRunner {
 		out.print("Enter your email address: ");
 		String email = sin.next();
 		out.print("Enter your password: ");
-		String password = sin.next();
+		String password = sin.next().trim();
 
 		Student students = studentService.getStudentByEmail(email);
 		if (students != null) {
@@ -126,7 +130,9 @@ public class SMSRunner {
 			}
 			retValue = true;
 		} else {
-			System.out.println("User Validation failed. GoodBye!");
+			System.out.println("\n*******************************************************" +
+					"\nUser Validation failed. Email or Password is incorrect." +
+					"\n*******************************************************");
 		}
 		return retValue;
 	}
@@ -203,7 +209,9 @@ public class SMSRunner {
 				default:
 			}
 			} catch (InputMismatchException e) {
-				System.out.println("Input error. Please choose a number from the menu to continue.");
+				System.out.println("**************************************************************" +
+						"\nInput error. Please choose a number from the menu to continue." +
+						"\n**************************************************************");
 				sin.nextLine();
 				registerMenu();
 
