@@ -19,7 +19,9 @@ import jpa.service.StudentCourseService;
 import jpa.service.StudentService;
 import jpa.util.SMSUtil;
 
+import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Query;
 
 /**1
  * 
